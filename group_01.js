@@ -6,28 +6,31 @@ var scout = ["Scout", "6243", "74750", 5];
 
 var employees = [atticus, jem, boo, scout];
 
+//function that accesses the individual employee information to derive the total compensation they should recieve based on thier bonus.
+//@param employee : the array of employees that we get our data from to find the bonus.
 function findBonus(employee) {
-var array = [];
-var rating = employee[3];
-var bonusPercent = 0;
-var salary = parseInt(employee[2]);
-var bonusAmount = 0;
 
-    array[0] = employee[0];
+  var array = [];
+  var rating = employee[3];
+  var bonusPercent = 0;
+  var salary = parseInt(employee[2]);
+  var bonusAmount = 0;
 
-    switch (rating) {
-      case 3:
-        bonusPercent = .04;
-        break;
-      case 4:
-        bonusPercent = .06;
-        break;
-      case 5:
-        bonusPercent = .1;
-        break;
-      default:
-        bonusPercent = 0;
-        break;
+  array[0] = employee[0];
+
+  switch (rating) {
+    case 3:
+      bonusPercent = .04;
+      break;
+    case 4:
+      bonusPercent = .06;
+      break;
+    case 5:
+      bonusPercent = .1;
+      break;
+    default:
+      bonusPercent = 0;
+      break;
     }
 
     if(employee[1].length == 4){
@@ -53,7 +56,7 @@ var bonusAmount = 0;
     return array;
 }
 
-
+// loops through an array of employees and prints out the relevant bonus information for each employee.
 for (var i = 0; i<employees.length; i++){
 
   var face = findBonus(employees[i]);
